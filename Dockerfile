@@ -19,6 +19,7 @@ RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /
 USER appuser
 
 RUN chmod 777 /code
+# RUN python /code/data/import_review.py
 
 CMD ["gunicorn", "-c", "config/gunicorn/conf.py", "--bind", ":8000", "--chdir", "core", "core.wsgi:application"]
 # ENTRYPOINT ["/bin/sh", "entrypoint.sh"]

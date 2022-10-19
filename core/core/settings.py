@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'award.apps.AwardConfig',
 ]
 
 MIDDLEWARE = [
@@ -78,7 +79,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'postgres',
-        'HOST': 'db_postgres',
+        'PASSWORD': 'mypassword',
+        'HOST': '127.0.0.1',
         'PORT': 5432,
     }
 }
