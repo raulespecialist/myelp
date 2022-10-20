@@ -20,6 +20,8 @@ cd myelp
 docker-compose up
 ```
    Para trabajar con los datos de inicio proporcionados por Yelp se nececita lo siguiente.
+   Descargar el siguiente archivo [subset 2.zip](https://drive.google.com/file/d/1rPjOdKXggrs3QYcEk8MQ9yyAD_dPZPG9/view?usp=sharing)
+   Descomprimirlo y copiar los 3 archivos json _users100k.json_ _business10k.json_ _review1M.json_ en la carpeta llamada _data/_ dentro de _myelp/_
 
 Crear tablas iniciales por medio de Django
 ```sh
