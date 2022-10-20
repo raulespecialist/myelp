@@ -5,6 +5,7 @@
 __pycache__
 db.sqlite3
 media
+*migrations*
 
 # Backup files # 
 *.bak 
@@ -137,4 +138,4 @@ GitHub.sublime-settings
 .history
 
 #Datas
-data/
+data/*.json

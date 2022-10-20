@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-0whmsp(63y2(kvs_*yx$#lj%2hj%+idyyq3cy7jhd7@em)i6d9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1']
+CSRF_TRUSTED_ORIGINS=['http://127.0.0.1']
 
 
 # Application definition

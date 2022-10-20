@@ -26,8 +26,8 @@ class User(models.Model):
 # Model for Reviews
 class Review(models.Model):
     review_id = models.CharField(primary_key=True, max_length=100)
-    user_id = models.CharField(max_length=100)
-    business_id = models.CharField(max_length=100)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
+    business = models.ForeignKey(Business, on_delete=models.CASCADE, default=None)
     stars = models.FloatField()
     useful = models.IntegerField()
     funny = models.IntegerField()
