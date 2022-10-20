@@ -4,7 +4,8 @@ mYelp es en principio una herramienta para otorgar insignias a negocios referent
 
 
 # Implementacion
-![Descripcion grafica](https://github.com/raulespecialist/myelp/blob/a956e72cf3277722820098d4fb8f0a4289556c4b/description.png)
+![description](https://user-images.githubusercontent.com/54911620/197017798-fad06f0a-ef3b-4ad5-b1f6-5a7a4327dda9.png)
+
 ### Descripción
 Por la flexibilidad que nos ofrece el framework. Django lo usaremos como base para nuestro proyecto, ya que tenemos la oportunidad de usar su sistemas MVC para Frontend y Backend, a si como tener la posibilidad de extenderlo con un sistema API REST o bien extender con cualquiera de las librerias de Python, Desde filtrados, particionados, uniones e incluso hasta funciones búsquedas avanzadas de PostgreSQL. 
 Elegí PostgreSQL  ya que tiene un énfasis en la extensibilidad y el cumplimiento de los estándares. Es elegida porque cumple con la característica y protocolo ACID, lo que significa Atomicidad, Consistencia, Aislamiento y Durabilidad (siglas en inglés). Por ello, se garantiza la información de la base de datos y fiabilidad en el sistema. Django sera servida por medio de Gunicorn. 
@@ -13,7 +14,7 @@ Gunicorn es un servidor WSGI de Python puro para UNIX. No tiene dependencias y e
 
 ### Instalación
 La instalacion se realiza mediante docker-compose.
-```
+```sh
 git clone https://github.com/raulespecialist/myelp.git
 cd myelp
 docker-compose up
@@ -21,22 +22,27 @@ docker-compose up
    Para trabajar con los datos de inicio proporcionados por Yelp se nececita lo siguiente.
 
 Crear tablas iniciales por medio de Django
-```
+```sh
 docker-compose run django_app python core/manage.py migrate
 docker-compose run django_app python core/manage.py makemigrations award
 docker-compose run django_app python core/manage.py migrate yelp
 ```
+![postgres - public - award_review](https://user-images.githubusercontent.com/54911620/197017624-57fcd72c-6ffe-446e-aebd-b9959c8cbe04.png)
+
 Recolectar los archivos estaticos para el frontend, Bootstrap5.
-```
+```sh
 docker-compose run django_app python core/manage.py collectstatic
+```
 Importar los Datasets de Yelp a nuestras bases de datos, por medio de Python Pandas
+```sh
 docker-compose run django_app python data/import_business.py 
 docker-compose run django_app python data/import_user.py
 docker-compose run django_app python data/import_review.py
 ```
 Si se desea crear un usuario administrador para el panel de administracion usar el siguiente comando.
-```
+```sh
 docker-compose run django_app python core/manage.py createsuperuser
 ```
 Para verificar la instalación ingresar en http://127.0.0.1/ para el área de administración http://127.0.0.1/admin
+
 
