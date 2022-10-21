@@ -25,9 +25,9 @@
             <div class="d-lg-none" style="width: 2.25rem;"></div>
       
           <a class="navbar-brand p-0 me-0 me-lg-2" href="/" aria-label="Bootstrap">
-            <i class="bi bi-shop">mYelp</i>
+            <i class="bi bi-yelp">mYelp</i>
           </a>
-      
+          <a href="/award" class="btn btn-lg btn-primary">Find</a>
           <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-label="Toggle navigation">
             <svg class="bi" aria-hidden="true"><use xlink:href="#three-dots"></use></svg>
           </button>
@@ -169,22 +169,22 @@
           </div>
         </div>
       </div>
-      
-      <div class="container-xxl bd-gutter masthead-followup md-5">
+      <div class="row">
+      <div class="container-xxl bd-gutter masthead-followup col-5">
             <h3 class="text-center"><i>"Top 10 Rating stars"</i></b></h3>
             {% for busine in business %}
             <p><i class="bi bi-yelp text-primary"> {{ busine.business.name }} </i></p>
             <p>{{ busine.business.name }} , {{ busine.average_stars|floatformat }}</p>
             {% endfor %}
       </div>
-      <div class="container-xxl bd-gutter masthead-followup md-5">
+      <div class="container-xxl bd-gutter masthead-followup col-5">
         <h3 class="text-center"><i>"Top 10 Rating Revieweds"</i></b></h3>
         {% for busine_r in business_r %}
         <p><i class="bi bi-yelp text-primary"> {{ busine_r.business.name }} </i></p>
         <p>{{ busine_r.business.name }} , {{ busine_r.busines_idr }}</p>
         {% endfor %}
-  </div>
-      
+      </div>
+      </div>
         </main>
       
         

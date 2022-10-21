@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/@trevoreyre/autocomplete-js/dist/style.css" />
     
 
   </head>
@@ -27,7 +28,7 @@
             <div class="d-lg-none" style="width: 2.25rem;"></div>
       
           <a class="navbar-brand p-0 me-0 me-lg-2" href="/" aria-label="Bootstrap">
-            <i class="bi bi-shop">mYelp</i>
+            <i class="bi bi-yelp">mYelp</i>
           </a>
       
           <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-label="Toggle navigation">
@@ -171,39 +172,24 @@
             })
         },
         renderResult: (result, props) => `
-          <div ${props} class="col-2 text-md-center" style="float:left;height:150px;width:24%;overflow:hidden;">
+          <li ${props} class="text-md-center" style="float:left;width:95%;overflow:hidden;">
 
-
+            <a href="/award/${result.business_id}" style="text-decoration:none;">
             <p class="lead fw-normal bg-light border">
-               ${result.name} 
+               ${result.name}, ${result.city}, ${result.state}
             </p>
+            </a>
               
 
 
 
-          </div>
+          </li>
         `,
         getResultValue: result => result.name,
 
         onSubmit: result => {
             business = result; //pass clicked result to global
         }
-    })
-
-    
-    $('#ull').click(function (e) {
-      
-        $.ajax({
-            url: '',
-            type: 'GET',
-            data: {
-                valproduct: business,
-            },
-            success: function (response) {
-                window.location = response.urlLink;
-            }
-        })
-
     })
 
     document.getElementById("ull").style.position = "relative";

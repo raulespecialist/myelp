@@ -25,7 +25,7 @@
             <div class="d-lg-none" style="width: 2.25rem;"></div>
       
           <a class="navbar-brand p-0 me-0 me-lg-2" href="/" aria-label="Bootstrap">
-            <i class="bi bi-shop">mYelp</i>
+            <i class="bi bi-yelp">mYelp</i>
           </a>
       
           <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-label="Toggle navigation">
@@ -185,7 +185,7 @@
       </div>
       
       <div class="container-xxl bd-gutter masthead-followup">
-            <h3 class="text-center"><i>"{{ reviews.1.business.name }}"</i></b></h3>
+            <h3 class="text-center"><i>{{ reviews.0.business.name }}</i></h3>
             {% for review in reviews %}
             <p><b>Review by:</b><i class="bi bi-person-circle text-primary"> {{ review.user.name }} </i> 
             <b>&nbsp;&nbsp;&nbsp;Stars:</b> {% for i in "x"|rjust:review.stars %}<i class="text-warning bi bi-star-fill"></i>{% endfor %}</p>

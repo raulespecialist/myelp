@@ -15,6 +15,7 @@ def search_business(request):
     if business:
         #collect every objects that contains the input text
         business_objects = Business.objects.filter(name__icontains=business).values()
+        #business_objects = Review.objects.select_related('business').filter(business__name__icontains=business).annotate(business_idr = Count('business_id')).order_by('-business_idr')
         for business in business_objects:
             businesslist.append(business)
     return JsonResponse({'status':200, 'business':businesslist})
